@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "libobsh"
-version = "0.1.1"
+version = "0.1.3"
 description = "Library of Babel tools: encode any file to a deterministic coordinate, decode, and run scripts"
-authors = [{name = "Your Name", email = "you@example.com"}]
+authors = [{name = "McTRASH692", email = "your-email@example.com"}]
 license = {text = "GPL-3.0"}
 readme = "README.md"
 requires-python = ">=3.6"
