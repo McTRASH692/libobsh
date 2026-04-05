@@ -39,7 +39,7 @@ Requirements
 License
 -------
 
-MIT
+GNU GPLv3
 
 Credits
 -------
