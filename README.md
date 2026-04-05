@@ -1,24 +1,24 @@
-Library of Babel Tools (lob)
-============================
-[![PyPI version](https://badge.fury.io/py/libobsh.svg)](https://pypi.org/project/libobsh/)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+Library of Babel Tools (libobsh)
+================================
 
-Encode any file to a deterministic Library of Babel coordinate, and decode/run it.
+[PyPI version] (https://badge.fury.io/py/libobsh) [License: GPL v3] (https://img.shields.io/badge/License-GPLv3-blue.svg)
+
+Proof of Concept
+----------------
+
+This tool is primarily for learning and skill improvement. It is functional for small data but has limited practical application due to coordinate size overhead. See "Limitations" below.
 
 Installation
 ------------
 
-    git clone https://github.com/yourusername/libobsh.git
-    cd libobsh
-    ./setup.sh
-    export PATH="$HOME/.local/bin:$PATH"
+    pip install libobsh
 
 Usage
 -----
 
 * Encode a file (any size):
       lob-encode myfile
-      Creates myfile.coord.
+      Creates myfile.coord
 
 * Decode a coordinate back to a file:
       lob-decode myfile.coord restored
@@ -29,9 +29,28 @@ Usage
 How it works
 ------------
 
-* Files <= 3200 bytes: stored in a single Library page; .coord contains the page address.
-* Larger files: split into 3200-byte pages; a manifest (JSON) is stored in the Library, and the .coord contains the manifest address.
+* Files <= 3200 bytes are stored in a single Library page; the .coord contains the page address.
+* Larger files are split into 3200‑byte pages; a manifest (JSON) is stored in the Library, and the .coord contains the manifest address.
 * The decoder automatically detects whether the coordinate points to a manifest or raw data.
+
+Limitations
+-----------
+
+Proof of concept / educational project
+  This tool is a personal exploration of the Library of Babel concept and deterministic encoding. It is fully functional for small files (e.g., shell scripts, configuration files, short text) but does not provide storage compression. On the contrary, a Library coordinate is always longer (about 1.55x) than the original data. For a 3200‑byte page, the coordinate is ≈4950 characters.
+
+Practical use
+  * Works well for tiny files (a few hundred bytes) where the coordinate length is still manageable.
+  * Inefficient for large files (megabytes): the manifest (list of page coordinates) becomes larger than the original file.
+  * Not suitable as a general‑purpose archiving or compression tool.
+
+Educational value
+  The primary purpose of this project is to learn about:
+    - Base‑256 to base‑36 conversion and big‑integer arithmetic.
+    - Deterministic addressing and recursion for splitting data.
+    - Building a complete Python package from scratch (CLI, packaging, PyPI, documentation).
+
+Use this tool to experiment, learn, or satisfy curiosity – not for production storage of large files.
 
 Requirements
 ------------
@@ -41,9 +60,4 @@ Requirements
 License
 -------
 
-GNU GPLv3
-
-Credits
--------
-
-This software is based on the concept of the "Library of Babel" by Jorge Luis Borges and the technical implementation by Jonathan Basile (libraryofbabel.info). It also uses algorithmic ideas from the open‑source repository jrhea/library-of-babel. See CREDITS.md for details.
+GNU General Public License v3.0
