@@ -1,5 +1,7 @@
 Library of Babel Tools (lob)
 ============================
+[![PyPI version](https://badge.fury.io/py/libobsh.svg)](https://pypi.org/project/libobsh/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Encode any file to a deterministic Library of Babel coordinate, and decode/run it.
 
