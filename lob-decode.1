@@ -1,0 +1,23 @@
+.\" Man page for lob-decode
+.TH LOB-DECODE 1 "April 2026" "libobsh 0.1.0" "User Commands"
+.SH NAME
+lob-decode \- Reconstruct a file from a Library coordinate
+.SH SYNOPSIS
+.B lob-decode
+.I coord-file
+.I output-file
+.SH DESCRIPTION
+.B lob-decode
+reads a \fI.coord\fR file (created by \fBlob-encode\fR) and reconstructs
+the original file.
+.PP
+The tool automatically detects whether the coordinate points to a
+single page or a multi‑page manifest, and reconstructs the original
+file in either case.
+.SH EXAMPLES
+.TP
+.B lob-decode script.sh.coord recovered.sh
+Reconstructs the original script.
+.SH "SEE ALSO"
+.BR lob-encode (1),
+.BR lob-run (1)

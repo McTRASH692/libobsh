@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+libobsh.egg-info/PKG-INFO
+libobsh.egg-info/SOURCES.txt
+libobsh.egg-info/dependency_links.txt
+libobsh.egg-info/entry_points.txt
+libobsh.egg-info/top_level.txt

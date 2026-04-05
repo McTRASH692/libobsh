@@ -1,0 +1,4 @@
+[console_scripts]
+lob-decode = lob_decode:main
+lob-encode = lob_encode:main
+lob-run = lob_run:main

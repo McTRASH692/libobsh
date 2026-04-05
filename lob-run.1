@@ -1,0 +1,22 @@
+.\" Man page for lob-run
+.TH LOB-RUN 1 "April 2026" "libobsh 0.1.0" "User Commands"
+.SH NAME
+lob-run \- Execute a bash script directly from a Library coordinate
+.SH SYNOPSIS
+.B lob-run
+.I script.coord
+.SH DESCRIPTION
+.B lob-run
+fetches a bash script from the Library using its \fI.coord\fR file,
+writes it to a temporary file, executes it, and removes the temporary
+file afterward. The exit code of the script is preserved.
+.PP
+This command only works for bash scripts. For other file types,
+use \fBlob-decode\fR.
+.SH EXAMPLES
+.TP
+.B lob-run backup.coord
+Runs the script referenced by \fIbackup.coord\fR.
+.SH "SEE ALSO"
+.BR lob-encode (1),
+.BR lob-decode (1)

@@ -1,0 +1,26 @@
+.\" Man page for lob-encode
+.TH LOB-ENCODE 1 "April 2026" "libobsh 0.1.0" "User Commands"
+.SH NAME
+lob-encode \- Convert a file to a Library of Babel coordinate
+.SH SYNOPSIS
+.B lob-encode
+.I file
+.SH DESCRIPTION
+.B lob-encode
+reads a file and converts it to a deterministic Library of Babel
+coordinate. The coordinate is saved as a \fI.coord\fR file.
+.PP
+If the file is larger than 3200 bytes, it is automatically split
+into pages; a manifest is stored in the Library, and the manifest
+coordinate is saved as the \fI.coord\fR file. The decoder can
+reconstruct the original file from this single coordinate.
+.SH EXAMPLES
+.TP
+.B lob-encode script.sh
+Creates \fIscript.sh.coord\fR.
+.SH FILES
+.I file.coord
+Output coordinate file.
+.SH "SEE ALSO"
+.BR lob-decode (1),
+.BR lob-run (1)
